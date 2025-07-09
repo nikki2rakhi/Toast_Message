@@ -1,0 +1,45 @@
+.toast-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast-container {
+  position: relative;
+  border: 1px solid red;
+  background-color: white;
+  width: 300px;
+  height: 40px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Red progress bar at the bottom */
+.toast-container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: red;
+  animation: shrinkBar 5s linear forwards;
+}
+
+@keyframes shrinkBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
